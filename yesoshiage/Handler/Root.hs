@@ -15,3 +15,34 @@ getRootR = do
         h2id <- lift newIdent
         setTitle "yesoshiage homepage"
         $(widgetFile "homepage")
+
+getRegisterR :: Handler RepHtml
+getRegisterR = do
+    defaultLayout $ do
+        h2id <- lift newIdent
+        setTitle "新規メモ登録"
+        $(widgetFile "register")
+
+postRegisterR :: Handler RepHtml
+postRegisterR = do
+    memo <- runInputPost $ Memo 
+              <$> ireq textField "memo"
+    memoID <- runDB $ do
+        mid <- insert $ memo
+        return mid
+    defaultLayout $ do
+        h2id <- lift newIdent
+        setTitle "新規メモ登録"
+        $(widgetFile "registerpost")
+
+getDisplayR :: MemoId -> Handler RepHtml
+getDisplayR mid = do
+    memo <- runDB $ do
+        m <- get404 mid
+        return m
+    defaultLayout $ do
+        h2id <- lift newIdent
+        setTitle "メモ表示"
+        $(widgetFile "display")
+
+

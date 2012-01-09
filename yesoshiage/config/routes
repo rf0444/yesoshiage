@@ -5,3 +5,5 @@
 /robots.txt RobotsR GET
 
 / RootR GET
+/register RegisterR GET POST
+/show/#MemoId DisplayR GET

@@ -1,1 +1,1 @@
-Hello: Hello
+Hello: メモ登録ページ

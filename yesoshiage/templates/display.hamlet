@@ -1,0 +1,6 @@
+<h1>メモ表示
+メモ：
+<blockquote>#{memoContents memo}
+  <br>
+
+

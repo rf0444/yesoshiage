@@ -1,0 +1,8 @@
+<h1>_{MsgHello}
+メモ：
+<form method=post action=@{RegisterR}
+  <textarea.memo name=memo>
+  <br>
+  <input type=submit value="登録"
+
+
