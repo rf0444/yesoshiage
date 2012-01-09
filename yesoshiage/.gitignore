@@ -3,3 +3,5 @@ cabal-dev/
 static/tmp/
 dist/
 config/client_session_key.aes
+.static-cache
+*.swp
