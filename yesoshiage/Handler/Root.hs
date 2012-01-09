@@ -46,3 +46,27 @@ getDisplayR mid = do
         $(widgetFile "display")
 
 
+getSessionShowR :: Handler RepHtml
+getSessionShowR = do
+    sess <- getSession
+    defaultLayout $ do
+        setTitle "SessionShowPage"
+        $(widgetFile "session-show")
+
+getSessionFormR :: Handler RepHtml
+getSessionFormR = do
+    defaultLayout $ do
+        setTitle "SessionFormPage"
+        $(widgetFile "session-form")
+
+postSessionRegisterR :: Handler RepHtml
+postSessionRegisterR = do
+    val <- runInputPost $ ireq textField "val"
+    setSession "key" val
+    defaultLayout $ do
+        setTitle "SessionRegisterPage"
+        $(widgetFile "session-register")
+
+
+
+

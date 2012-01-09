@@ -7,3 +7,8 @@
 / RootR GET
 /register RegisterR GET POST
 /show/#MemoId DisplayR GET
+
+/session/show SessionShowR GET
+/session/form SessionFormR GET
+/session/register SessionRegisterR POST
+
