@@ -49,6 +49,7 @@ getDisplayR mid = do
 getSessionShowR :: Handler RepHtml
 getSessionShowR = do
     sess <- getSession
+    value <- lookupSession "key"
     defaultLayout $ do
         setTitle "SessionShowPage"
         $(widgetFile "session-show")
