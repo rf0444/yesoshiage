@@ -1,0 +1,20 @@
+Default: &defaults
+  database: yesoshiage.sqlite3
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Test:
+  database: yesoshiage_test.sqlite3
+  <<: *defaults
+
+Staging:
+  database: yesoshiage_staging.sqlite3
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: yesoshiage_production.sqlite3
+  poolsize: 100
+  <<: *defaults
