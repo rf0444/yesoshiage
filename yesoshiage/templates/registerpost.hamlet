@@ -1,1 +1,3 @@
 メモを登録しました
+  <br>
+<a href="@{DisplayR mid}">URL</a>
