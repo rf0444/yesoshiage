@@ -10,6 +10,8 @@ import Import
 -- inclined, or create a single monolithic file.
 getRootR :: Handler RepHtml
 getRootR = do
+    setSession "hoge" "fuga"
+    sess <- getSession
     defaultLayout $ do
         h2id <- lift newIdent
         setTitle "yesoshiage homepage"
