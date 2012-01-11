@@ -1,2 +1,3 @@
 <h1>_{MsgHello}
+<p>#{show sess}
 <h2 ##{h2id}>You do not have Javascript enabled.

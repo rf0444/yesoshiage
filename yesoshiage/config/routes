@@ -12,3 +12,4 @@
 /session/form SessionFormR GET
 /session/register SessionRegisterR POST
 
+/formtest FormtestR GET POST
