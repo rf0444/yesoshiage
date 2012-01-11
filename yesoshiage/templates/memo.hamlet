@@ -1,0 +1,8 @@
+<h1>フォームのテスト
+メモ：#{contents}
+<form method=post action=formtest
+  ^{widget}
+  <br>
+  <input type=submit value="登録"
+
+
