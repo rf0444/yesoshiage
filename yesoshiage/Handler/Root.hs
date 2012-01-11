@@ -1,5 +1,4 @@
 module Handler.Root where
-
 import Import
 
 -- This is a handler function for the GET request method on the RootR
@@ -11,6 +10,8 @@ import Import
 -- inclined, or create a single monolithic file.
 getRootR :: Handler RepHtml
 getRootR = do
+    setSession "hoge" "fuga"
+    sess <- getSession
     defaultLayout $ do
         h2id <- lift newIdent
         setTitle "yesoshiage homepage"
@@ -27,9 +28,10 @@ postRegisterR :: Handler RepHtml
 postRegisterR = do
     memo <- runInputPost $ Memo 
               <$> ireq textField "memo"
-    memoID <- runDB $ do
-        mid <- insert $ memo
-        return mid
+    mid <- runDB $ do
+        m <- insert $ memo
+        return $ m
+    let 
     defaultLayout $ do
         h2id <- lift newIdent
         setTitle "新規メモ登録"
