@@ -70,6 +70,24 @@ postSessionRegisterR = do
         setTitle "SessionRegisterPage"
         $(widgetFile "session-register")
 
+memoForm :: Html -> MForm YO YO (FormResult Memo, Widget)
+memoForm = renderDivs $ Memo
+    <$> areq textField "contents" Nothing
 
 
+getFormtestR :: Handler RepHtml
+getFormtestR = do
+    ((_, widget), enctype) <- runFormGet memoForm
+    let contents = (""::String)
+    defaultLayout $ do
+        setTitle "Memo"
+        $(widgetFile "memo")
+
+postFormtestR :: Handler RepHtml
+postFormtestR = do
+    ((FormSuccess memo, widget), enctype) <- runFormPost memoForm
+    let contents = memoContents memo
+    defaultLayout $ do
+        setTitle "Memo"
+        $(widgetFile "memo")
 
