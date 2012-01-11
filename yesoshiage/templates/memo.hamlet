@@ -1,5 +1,5 @@
 <h1>フォームのテスト
-メモ：#{contents}
+メモ：#{contentsFromRequest}
 <form method=post action=formtest
   ^{widget}
   <br>
