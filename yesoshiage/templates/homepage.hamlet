@@ -31,7 +31,7 @@
         <li>
           <a href="#contact">Contact
         <li>
-          $maybe id <- maid
+          $maybe _ <- mauth
             <a href=@{AuthR LogoutR}>ログアウト
           $nothing
             <a href=@{AuthR LoginR}>ログイン
@@ -42,7 +42,7 @@
       <div class="span10">
           <h1>ようこそ！
         <p>
-          $maybe (id, user) <- maid
+          $maybe (id, user) <- mauth
             こんにちは、#{userIdent user}さん。<br>
           $nothing
             はじめまして！<br>
