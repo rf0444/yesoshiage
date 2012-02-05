@@ -13,6 +13,7 @@ getRootR = do
     setSession "hoge" "fuga"
     sess <- getSession
     defaultLayout $ do
+        addStylesheet $ StaticR $ StaticRoute ["bootstrap.css"] []
         h2id <- lift newIdent
         setTitle "yesoshiage homepage"
         $(widgetFile "homepage")
