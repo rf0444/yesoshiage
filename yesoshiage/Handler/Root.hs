@@ -10,6 +10,7 @@ import Import
 -- inclined, or create a single monolithic file.
 getRootR :: Handler RepHtml
 getRootR = do
+    mauth <- maybeAuth
     setSession "hoge" "fuga"
     sess <- getSession
     defaultLayout $ do
