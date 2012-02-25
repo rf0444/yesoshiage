@@ -1,5 +1,7 @@
 module Handler.Root where
 import Import
+import Yesod.Auth
+import Settings.StaticFiles
 
 -- This is a handler function for the GET request method on the RootR
 -- resource pattern. All of your resource patterns are defined in
@@ -14,7 +16,7 @@ getRootR = do
     setSession "hoge" "fuga"
     sess <- getSession
     defaultLayout $ do
-        addStylesheet $ StaticR $ StaticRoute ["bootstrap.css"] []
+        addStylesheet $ StaticR bootstrap_css
         h2id <- lift newIdent
         setTitle "yesoshiage homepage"
         $(widgetFile "homepage")

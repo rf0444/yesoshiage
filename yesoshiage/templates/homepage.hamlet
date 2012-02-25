@@ -17,7 +17,6 @@
         line-height: 1;
         letter-spacing: -1px;
       }
-</style>
 
 <div class="topbar">
   <div class="fill">
@@ -42,8 +41,9 @@
       <div class="span10">
           <h1>ようこそ！
         <p>
-          $maybe (id, user) <- mauth
-            こんにちは、#{userIdent user}さん。<br>
+          $maybe auth <- mauth
+            $with user <- entityVal auth
+              こんにちは、#{userIdent user}さん。<br>
           $nothing
             はじめまして！<br>
           ここは、Yesoshiageのトップページです

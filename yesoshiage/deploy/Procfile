@@ -63,4 +63,4 @@
 
 
 # Heroku configuration that runs your app
-web: ./dist/build/yesoshiage/yesoshiage -p $PORT
+web: ./dist/build/yesoshiage/yesoshiage production -p $PORT
